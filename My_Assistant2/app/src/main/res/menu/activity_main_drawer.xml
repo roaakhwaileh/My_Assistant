@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" android:id="@+id/groub1">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/person"
+            android:title="@string/menu_profile" />
+
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/groub2">
+        <item
+            android:id="@+id/nav_privacypolicy"
+            android:icon="@drawable/privacy"
+            android:title="@string/menu_privacypolicy" />
+        <item
+            android:id="@+id/nav_termcondition"
+            android:icon="@drawable/term"
+            android:title="@string/menu_termcondition" />
+
+    </group>
+</menu>
