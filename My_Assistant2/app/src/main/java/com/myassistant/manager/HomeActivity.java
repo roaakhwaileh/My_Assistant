@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -34,19 +37,26 @@ import androidx.appcompat.widget.Toolbar;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.view.Window;
 public class HomeActivity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     TextView name; ImageView image;
-
+    Window window;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
+       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setBackground(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {

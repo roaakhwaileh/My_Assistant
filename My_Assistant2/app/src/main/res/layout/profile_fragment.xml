@@ -193,16 +193,16 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="15dp"
                     android:background="#E5E5E5" />
+
                 <Button
                     android:id="@+id/delet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="25dp"
-                    android:background="@drawable/roundedbutton"
                     android:layout_marginTop="25dp"
-                    android:text="Delet Account"
-                    />
+                    android:layout_marginBottom="25dp"
+                    android:backgroundTint="#2E3F7F"
+                    android:text="Delete Account" />
 
             </LinearLayout>
 

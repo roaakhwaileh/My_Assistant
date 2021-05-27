@@ -17,7 +17,9 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -55,7 +57,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import android.view.Window;
 public class Signup extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     TypeAdapter typeAdapter;
     RecyclerView recyclerView;
@@ -67,6 +69,7 @@ public class Signup extends AppCompatActivity implements DatePickerDialog.OnDate
     SharedPreferences sharedpreferences;
     String disesencode;
     TextView date;
+    Window window;
     TextInputEditText name,pass,email,gender,phone;
 
     private   String imagetostring( Bitmap bitmap){
@@ -161,6 +164,11 @@ public class Signup extends AppCompatActivity implements DatePickerDialog.OnDate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         //custome bar with center title
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView textView = new TextView(this);
@@ -316,17 +324,17 @@ public class Signup extends AppCompatActivity implements DatePickerDialog.OnDate
                             .show();
                     return;
                 }
-              else{
-                  String index="";
-                  for(int i=0;i<selectedindex.size();i++){
-                      if(i==selectedindex.size()-1){
-                          index+=selectedindex.get(i).getSpecialty_id();
-                      }
-                      else{
-                          index+=selectedindex.get(i).getSpecialty_id()+",";
-                      }
+                else{
+                    String index="";
+                    for(int i=0;i<selectedindex.size();i++){
+                        if(i==selectedindex.size()-1){
+                            index+=selectedindex.get(i).getSpecialty_id();
+                        }
+                        else{
+                            index+=selectedindex.get(i).getSpecialty_id()+",";
+                        }
 
-                  }
+                    }
                     Signup(name,email,pass,index,gender,phone);
                 }
 
@@ -479,11 +487,11 @@ public class Signup extends AppCompatActivity implements DatePickerDialog.OnDate
                         email.setText("");
                         pass.setText("");
                         phone.setText("");
-               gender.setText("");
-               disesencode=null;
-               profileencode=null;
-               idencode=null;
-               date.setText("");
+                        gender.setText("");
+                        disesencode=null;
+                        profileencode=null;
+                        idencode=null;
+                        date.setText("");
 
                         new AlertDialog.Builder(Signup.this)
                                 .setTitle("Success Signup ")

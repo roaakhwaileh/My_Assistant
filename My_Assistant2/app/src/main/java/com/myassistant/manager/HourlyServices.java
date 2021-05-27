@@ -11,6 +11,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +37,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
+import android.view.Window;
 public class HourlyServices extends AppCompatActivity {
     TypeAdapter typeAdapter;
     RecyclerView recyclerView;
@@ -43,18 +45,23 @@ public class HourlyServices extends AppCompatActivity {
     ArrayList<Type> typelistt;
     ArrayList<String> typelisttid;
     SharedPreferences sharedpreferences;
-    TextInputEditText rate;
+    TextInputEditText priceti;
     String id;
     String selected_index;
     Button save;
+    Window window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hourly_rate);
         //custome bar with center title
-
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setCustomView(R.layout.action_bar_home);
         View view =getSupportActionBar().getCustomView();
         TextView textView= (TextView)view.findViewById(R.id.actionbar_textview);
@@ -68,7 +75,7 @@ public class HourlyServices extends AppCompatActivity {
         });
         sharedpreferences = getSharedPreferences("Assistant_Id", Context.MODE_PRIVATE);
         recyclerView = findViewById(R.id.recyclerView);
-        rate = findViewById(R.id.ratee);
+        priceti = findViewById(R.id.pricee);
         save = findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,11 +131,11 @@ public class HourlyServices extends AppCompatActivity {
                                 price=typelisthourly.get(i).getPrice().toString();
                             }
                         }
-                        rate.setText(price);
+                        priceti.setText(price);
                     }
                     else{
                         selected_index=typelist.get(position).getSpecialty_id();
-                        rate.setText("");
+                        priceti.setText("");
                     }
 
 
@@ -231,7 +238,7 @@ public class HourlyServices extends AppCompatActivity {
 
         // Create a String request
         // using Volley Library
-        String url = "https://myassistant.jaml46.net/APIs/assistant/add_hourly_work?assistant_id="+sharedpreferences.getString("assistantid","")+"&specialty_id="+selected_index+"&price="+rate.getText();
+        String url = "https://myassistant.jaml46.net/APIs/assistant/add_hourly_work?assistant_id="+sharedpreferences.getString("assistantid","")+"&specialty_id="+selected_index+"&price="+priceti.getText();
 
         StringRequest request
                 = new StringRequest(

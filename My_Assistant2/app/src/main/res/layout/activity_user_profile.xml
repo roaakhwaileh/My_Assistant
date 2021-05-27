@@ -159,16 +159,16 @@
 
 
                 <Button
-                    android:layout_marginTop="20sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true"
                     android:id="@+id/addrate"
-                    android:layout_width="match_parent"
+                    android:layout_width="245dp"
                     android:layout_height="wrap_content"
-
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
                     android:layout_gravity="center_horizontal"
-                    android:text="Add Rate"
-                    />
+
+                    android:layout_marginTop="20sp"
+                    android:backgroundTint="#2E3F7F"
+                    android:text="Add Rate" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

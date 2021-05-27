@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="@android:color/holo_red_light"
+            android:backgroundTint="#242240"
             android:text="reject" />
 
         <Button
@@ -42,7 +42,7 @@
             android:layout_centerInParent="true"
 
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#2E3F7F"
             android:text="Details" />
     </RelativeLayout>
 

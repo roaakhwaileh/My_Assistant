@@ -6,33 +6,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/capture2"
     tools:context=".OrderDetails">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <Space android:layout_width="match_parent"
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="30dp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/messgae"
-                android:enabled="false"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:maxLines="4"
+                android:enabled="false"
                 android:hint="Description"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:maxLines="4" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="25dp"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/location"
@@ -44,7 +49,9 @@
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
-        <Space android:layout_width="match_parent"
+
+        <Space
+            android:layout_width="match_parent"
             android:layout_height="30dp" />
 
         <Button
@@ -52,45 +59,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/roundedbutton"
             android:layout_marginTop="25dp"
-            android:text="View Profile"
-            />
+            android:layout_marginRight="50dp"
+            android:backgroundTint="#2E3F7F"
+            android:text="View Profile" />
 
         <Button
             android:id="@+id/whatsapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:background="@drawable/roundedbutton"
             android:layout_marginTop="25dp"
-            android:text="Whatsapp"
-            />
+            android:layout_marginRight="50dp"
+            android:backgroundTint="#2E3F7F"
+            android:text="What's App" />
 
 
     </LinearLayout>
+
     <RelativeLayout
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="25dp">
+
         <Button
             android:id="@+id/accept"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:gravity="center"
             android:layout_centerInParent="true"
-            android:backgroundTint="@android:color/holo_green_light"
-
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="25dp"
-            android:text="Accept"
-            />
+            android:layout_marginRight="50dp"
+            android:backgroundTint="#242240"
+
+            android:gravity="center"
+            android:text="Accept" />
 
 
     </RelativeLayout>

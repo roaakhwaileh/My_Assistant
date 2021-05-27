@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,18 +26,23 @@ import com.myassistant.manager.Model.jobrequestitem;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.view.Window;
 public class OrderDetails extends AppCompatActivity {
     Button profile,accept,whatsapp;
     TextInputEditText location,descripption;
     String req_assistant_id,phone,user_id;
     Intent intent;
+    Window window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
         //custome bar with center title
-
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_home);

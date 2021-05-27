@@ -38,27 +38,31 @@
 
         <TextView
             android:id="@+id/jobrequests"
-            android:background="@drawable/roundedbutton"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="100dp"
             android:layout_height="150sp"
-            android:layout_weight="0.5"
             android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/roundedbutton"
             android:gravity="center"
-            android:text="Job Requests" />
+            android:text="Job Requests"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/OrderHistory"
-            android:background="@drawable/roundedbutton"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="100dp"
             android:layout_height="150sp"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.5"
-            android:text="OrderHistory" />
+            android:background="@drawable/roundedbutton"
+            android:gravity="center"
+            android:text="OrderHistory"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
     <Space
@@ -72,27 +76,31 @@
 
         <TextView
             android:id="@+id/aboutus"
-            android:background="@drawable/roundedbutton"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="100dp"
             android:layout_height="150sp"
-            android:layout_weight="0.5"
             android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/roundedbutton"
             android:gravity="center"
-            android:text="AboutUs" />
+            android:text="AboutUs"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/rate"
-            android:background="@drawable/roundedbutton"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_width="100dp"
             android:layout_height="150sp"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="0.5"
-            android:text="Hourly Service Rate" />
+            android:background="@drawable/roundedbutton"
+            android:gravity="center"
+            android:text="Hourly Service Rate"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

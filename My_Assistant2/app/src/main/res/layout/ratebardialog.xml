@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="wrap_content"
+    android:background="@drawable/capture4"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
         android:text="Rate Assistant"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <RatingBar
 
-android:layout_gravity="center"
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_below="@+id/tv_name"
-        android:id="@+id/ratingBar"
-        android:numStars="5"
+        android:numStars="5" />
 
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -37,9 +41,11 @@ android:layout_gravity="center"
             android:hint="Title"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Space
         android:layout_width="wrap_content"
         android:layout_height="30dp"></Space>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -50,23 +56,24 @@ android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:maxLines="4"
             android:hint="Message"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:maxLines="4" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Space
-        android:layout_weight="1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Space>
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></Space>
+
     <Button
-        android:layout_weight="3"
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/roundedbutton"
         android:layout_marginTop="25dp"
-        android:text="Send"
-        />
+        android:layout_marginBottom="25dp"
+        android:layout_weight="0.02"
+        android:backgroundTint="#2E3F7F"
+        android:text="Send" />
 </LinearLayout>

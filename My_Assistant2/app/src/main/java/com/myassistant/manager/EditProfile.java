@@ -13,7 +13,9 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -43,9 +45,10 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-
+import android.view.Window;
 public class EditProfile extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     ImageView imageView ;
+    Window window;
     TextView birthdate;
     TextInputEditText name,email,gender,phone;
     String encode;
@@ -57,9 +60,13 @@ public class EditProfile extends AppCompatActivity implements DatePickerDialog.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         //custome bar with center title
-
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setCustomView(R.layout.action_bar_home);
         View view =getSupportActionBar().getCustomView();
         TextView textView= (TextView)view.findViewById(R.id.actionbar_textview);

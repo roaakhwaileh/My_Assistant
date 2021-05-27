@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/capture2"
+    android:scrollbars="vertical"
+    tools:context=".aboutus">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center"
+
+            android:text="Many people face different difficulties and obstacles to find assistance which helps them in
+making their tasks done .The main problem is that they cannot find a trusted person whom can be
+left in their houses with their kids as they have to make sure that the worker is mentally healthy,
+free of disease, trustworthy, dependable and responsible person. In addition being a professional
+in his field is a must.
+ Our team will develop a mobile Application named (My assistant) to help the people to get
+rid of this problem. The Application offers many options to the order requester, so that they can
+choose the kind of assistance they want such as home assistant, babysitter, gardener and cooker. It
+provides services that people may need for their daily life, just by knowing the order requester
+location.
+"
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>

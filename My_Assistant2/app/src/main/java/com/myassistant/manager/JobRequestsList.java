@@ -11,6 +11,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,18 +37,22 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.view.Window;
 public class JobRequestsList extends AppCompatActivity {
     JobRequestsRecycleAdapter jobRequestsRecycleAdapter;
     RecyclerView recyclerView;    SharedPreferences sharedpreferences;
-
+    Window window;
     ArrayList<jobrequestitem> joblist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_requests_list);
         //custome bar with center title
-
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_home);

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Assistant </string>
+    <string name="title_activity_my_assistant_home">MyAssistantHomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_privacypolicy">Privacy And Policy</string>
+    <string name="menu_termcondition">Term And Condition</string>
+    <string name="menu_aboutus">About Us</string>
+</resources>

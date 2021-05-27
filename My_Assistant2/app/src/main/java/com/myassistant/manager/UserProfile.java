@@ -11,6 +11,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -38,7 +40,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import android.view.Window;
 public class  UserProfile extends AppCompatActivity {
     RecyclerView recyclerView;
     Button addrate;
@@ -48,7 +50,7 @@ public class  UserProfile extends AppCompatActivity {
     TextView birthdate,gender,phone,name;
     Intent intent;
     ArrayList<feedbackitem> feedback;
-
+    Window window;
     ImageView profile;
     FeedbackRecycleAdapter feedbackRecycleAdapter;
     @Override
@@ -56,7 +58,11 @@ public class  UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         //custome bar with center title
-
+        if(Build.VERSION.SDK_INT>=21){
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorAccent)));
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.action_bar_home);
